@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Infinety\Notifications;
 
@@ -7,10 +7,8 @@ use Infinety\Notifications\Commands\NotificationsCommands;
 
 class NotificationsServiceProvider extends LaravelServiceProvider
 {
-
-
     /**
-     * Bootstrap the application events
+     * Bootstrap the application events.
      *
      * @return void
      */
@@ -25,7 +23,7 @@ class NotificationsServiceProvider extends LaravelServiceProvider
     }
 
     /**
-     * Register the service provider
+     * Register the service provider.
      */
     public function register()
     {
@@ -34,11 +32,11 @@ class NotificationsServiceProvider extends LaravelServiceProvider
     }
 
     /**
-     * Publish config file
+     * Publish config file.
      */
     private function handleConfigs()
     {
-        $configPath = __DIR__ . '/../config/notifications-config.php';
+        $configPath = __DIR__.'/../config/notifications-config.php';
 
         $this->publishes([$configPath => config_path('notifications.php')], 'config');
 
@@ -46,15 +44,15 @@ class NotificationsServiceProvider extends LaravelServiceProvider
     }
 
     /**
-     * Publish migration file
+     * Publish migration file.
      */
     private function handleMigrations()
     {
-        $this->publishes([__DIR__.'/../migrations/' => database_path('migrations') ], 'migrations');
+        $this->publishes([__DIR__.'/../migrations/' => database_path('migrations')], 'migrations');
     }
 
     /**
-     * Load and publish views
+     * Load and publish views.
      */
     private function handleViews()
     {
@@ -64,17 +62,17 @@ class NotificationsServiceProvider extends LaravelServiceProvider
     }
 
     /**
-     * Load routes
+     * Load routes.
      */
     private function handleRoutes()
     {
-        if (! $this->app->routesAreCached()) {
+        if (!$this->app->routesAreCached()) {
             require __DIR__.'/../routes.php';
         }
     }
 
     /**
-     * Register commands
+     * Register commands.
      */
     private function registerCommands()
     {

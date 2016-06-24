@@ -1,10 +1,10 @@
 <?php
+
 namespace Infinety\Notifications\Commands;
 
+use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Infinety\Notifications\Models\Notification;
-use Storage;
-use Carbon\Carbon;
 
 class NotificationsCommands extends Command
 {
@@ -27,43 +27,43 @@ class NotificationsCommands extends Command
 
 
     /**
-     * Model used on config file
+     * Model used on config file.
      *
      * @var \Illuminate\Foundation\Application|mixed
      */
     protected $model;
 
     /**
-     * Model column used on config file
+     * Model column used on config file.
      *
      * @var string
      */
     protected $modelColumn;
 
     /**
-     * Model ID or all
+     * Model ID or all.
      *
-     * @var integer|string
+     * @var int|string
      */
     protected $notify;
 
 
     /**
-     * Subject for the notification
+     * Subject for the notification.
      *
      * @var string
      */
     protected $subject;
 
     /**
-     * Message for the notification
+     * Message for the notification.
      *
      * @var string
      */
     protected $message;
 
     /**
-     * Type of notification. Default to: info
+     * Type of notification. Default to: info.
      *
      * @var string
      */
@@ -79,13 +79,11 @@ class NotificationsCommands extends Command
 
 
     /**
-     * An array with all notified models
+     * An array with all notified models.
      *
      * @var array
      */
     protected $notified;
-
-
 
     public function __construct()
     {
@@ -115,22 +113,22 @@ class NotificationsCommands extends Command
             $this->printResult();
         }
 
-        
+
         // dump($this->notify);
         // dump($this->type);
     }
 
     /**
-     * Welcome Message
+     * Welcome Message.
      */
     private function welcome()
     {
-        $this->comment("");
-        $this->comment("|");
-        $this->comment("| Welcome to  Notification System.");
+        $this->comment('');
+        $this->comment('|');
+        $this->comment('| Welcome to  Notification System.');
         $this->comment("| You're going to send a notification message.");
-        $this->comment("|");
-        $this->comment("");
+        $this->comment('|');
+        $this->comment('');
     }
 
     /*
@@ -174,24 +172,24 @@ class NotificationsCommands extends Command
     }
 
     /**
-     * Generates a preview for the info
+     * Generates a preview for the info.
      */
     private function preview()
     {
         $headers = ['Information', 'User values'];
 
         $info = [
-            [ 'Notify to',  $this->notify ],
-            [ 'Subject',    $this->subject ],
-            [ 'Message',    $this->message ],
-            [ 'Type',       $this->type ]
+            ['Notify to',  $this->notify],
+            ['Subject',    $this->subject],
+            ['Message',    $this->message],
+            ['Type',       $this->type],
         ];
 
         $this->table($headers, $info);
     }
 
     /**
-     * Process and send the notification
+     * Process and send the notification.
      */
     private function notifyProcess()
     {
@@ -204,6 +202,7 @@ class NotificationsCommands extends Command
         }
         if ($toModify == null) {
             $this->error(PHP_EOL.PHP_EOL.' Sorry, this model ID does not exists. Please check it.'.PHP_EOL);
+
             return;
         }
         if ($this->notify == 'all') {
@@ -216,9 +215,9 @@ class NotificationsCommands extends Command
     }
 
     /**
-     * Create a notification based of given id
+     * Create a notification based of given id.
      *
-     * @param  integer $id
+     * @param int $id
      */
     private function createNotification($id)
     {
@@ -229,12 +228,12 @@ class NotificationsCommands extends Command
                 'type'      => $this->type,
                 'subject'   => $this->subject,
                 'message'   => $this->message,
-                'sent_at'   => Carbon::now()
+                'sent_at'   => Carbon::now(),
             ]);
 
         $arrayToSave = [
             'model_id'  => $id,
-            'result'    => 'error'
+            'result'    => 'error',
         ];
 
         if ($notification != null) {
@@ -243,8 +242,6 @@ class NotificationsCommands extends Command
 
         $this->notified->push($arrayToSave);
     }
-
-
 
     private function printResult()
     {

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Infinety\Notifications\Models;
 
@@ -7,7 +7,6 @@ use App\SystemModel as Model;
 
 class Notification extends Model
 {
-
     /**
      * The attributes that are mass assignable.
      *
@@ -30,20 +29,18 @@ class Notification extends Model
      */
     protected $dates = ['sent_at', 'created_at', 'updated_at'];
 
-
     /**
-     * Returns ID of notification
+     * Returns ID of notification.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
         return $this->id;
     }
 
-
     /**
-     * Return type of notification
+     * Return type of notification.
      *
      * @return string
      */
@@ -52,9 +49,8 @@ class Notification extends Model
         return $this->type;
     }
 
-
     /**
-     * Returns the subject of notification
+     * Returns the subject of notification.
      *
      * @return string
      */
@@ -63,9 +59,8 @@ class Notification extends Model
         return $this->subject;
     }
 
-
     /**
-     * Returns message of notification
+     * Returns message of notification.
      *
      * @return string
      */
@@ -74,11 +69,10 @@ class Notification extends Model
         return $this->message;
     }
 
-
     /**
-     * Check if notification is read or not
+     * Check if notification is read or not.
      *
-     * @return boolean
+     * @return bool
      */
     public function isRead()
     {
@@ -90,12 +84,12 @@ class Notification extends Model
         return $this->belongsTo(config('notifications.model'));
     }
 
-
     /**
-     * Model Mutator to change integer to boleean
+     * Model Mutator to change integer to boleean.
      *
-     * @param  integer $value
-     * @return boolean
+     * @param int $value
+     *
+     * @return bool
      */
     public function getIsReadAttribute($value)
     {

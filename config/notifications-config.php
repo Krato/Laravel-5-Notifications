@@ -8,7 +8,7 @@ return [
     |--------------------------------------------------------------------------
     |
      */
-    "model" => App\User::class,
+    'model' => App\User::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -16,7 +16,7 @@ return [
     |--------------------------------------------------------------------------
     |
      */
-    "model_column" => "name",
+    'model_column' => 'name',
 
 
     /*
@@ -25,8 +25,8 @@ return [
     |--------------------------------------------------------------------------
     |
      */
-    "model_field" => "id",
-    
+    'model_field' => 'id',
+
 
     /*
     |--------------------------------------------------------------------------
@@ -34,7 +34,7 @@ return [
     |--------------------------------------------------------------------------
     |
      */
-    "group_model" => Infinety\Notifications\Models\GroupNotification::class,
+    'group_model' => Infinety\Notifications\Models\GroupNotification::class,
 
 
     /*
@@ -43,21 +43,21 @@ return [
     |--------------------------------------------------------------------------
     |
      */
-    "group_field" => "id",
+    'group_field' => 'id',
 
     /*
     |--------------------------------------------------------------------------
     | List of notification types. Please not null
-    | 
+    |
     | First is the type. Example: critical
     | Second is the label class for labels. Example: label-danger
     |--------------------------------------------------------------------------
     |
      */
-    "notification_types" => [
-        'info' => 'label-info',
-        'success'=> 'label-success',
-        'warning'=> 'label-warning',
-        'critical'=> 'label-danger'
+    'notification_types' => [
+        'info'     => 'label-info',
+        'success'  => 'label-success',
+        'warning'  => 'label-warning',
+        'critical' => 'label-danger',
     ],
 ];

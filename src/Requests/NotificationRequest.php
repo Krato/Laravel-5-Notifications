@@ -24,8 +24,8 @@ class NotificationRequest extends Request
     public function rules()
     {
         return [
-            'model' => 'required',
-            'ntype' => 'required',
+            'model'   => 'required',
+            'ntype'   => 'required',
             'subject' => 'required',
             'message' => 'required',
         ];
