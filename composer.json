@@ -1,5 +1,5 @@
 {
-  "name": "infinety/notifications",
+  "name": "infinety-es/notifications",
   "description": "Notification messages system",
   "keywords": ["notifications", "messages"],
   "license": "MIT",
