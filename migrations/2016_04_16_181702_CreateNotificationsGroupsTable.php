@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateNotificationsGroupsTable extends Migration
 {
@@ -13,29 +13,25 @@ class CreateNotificationsGroupsTable extends Migration
     public function up()
     {
         Schema::create('group_notifications', function (Blueprint $table) {
-
             $table->increments('id');
-            
-            $table->string('name', 128);
-            
-            $table->string('description', 255);
-            
-            $table->timestamps();
 
+            $table->string('name', 128);
+
+            $table->string('description', 255);
+
+            $table->timestamps();
         });
 
 
-        Schema::create('group_notifications_model', function(Blueprint $table)
-        {
+        Schema::create('group_notifications_model', function (Blueprint $table) {
             $table->increments('id');
-            
+
             $table->integer('group_notifications_id')->unsigned();
 
             $table->integer('model_id')->unsigned();
-            
+
             $table->timestamps();
         });
-
     }
 
     /**

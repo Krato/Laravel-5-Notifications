@@ -6,10 +6,8 @@ use Infinety\Notifications\Models\Notification;
 
 trait NotificationTrait
 {
-
-
     /**
-     * Get All Notifications. Readed or not
+     * Get All Notifications. Readed or not.
      *
      * @return Eloquent
      */
@@ -19,7 +17,7 @@ trait NotificationTrait
     }
 
     /**
-     * Get not read notifications
+     * Get not read notifications.
      *
      * @return Eloquent
      */
@@ -29,7 +27,7 @@ trait NotificationTrait
     }
 
     /**
-     * Get read Notifications
+     * Get read Notifications.
      *
      * @return Eloquent
      */
@@ -37,28 +35,24 @@ trait NotificationTrait
     {
         return $this->hasMany(Notification::class, 'model_id', config('notifications.model_field'))->where('is_read', 1)->orderBy('sent_at');
     }
-    
+
     /**
-     * Get Count of all Notifications
+     * Get Count of all Notifications.
      *
-     * @return integer
+     * @return int
      */
     public function getAllNotificationCount()
     {
         return $this->hasMany(Notification::class, 'model_id', config('notifications.model_field'))->count();
     }
 
-
     /**
-     * Get Count of not read Notifications
+     * Get Count of not read Notifications.
      *
-     * @return integer
+     * @return int
      */
     public function getNotReadNotificationCount()
     {
         return $this->hasMany(Notification::class, 'model_id', config('notifications.model_field'))->where('is_read', 0)->count();
     }
-
-
-
 }
