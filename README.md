@@ -136,8 +136,8 @@ Please see the [license file](LICENSE.md) for more information.
 [ico-version]: https://img.shields.io/packagist/v/infinety-es/notifications.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-green.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/infinety-es/notifications.svg?style=flat-square
-[ico-styleci]: https://styleci.io/repos/60768133/shield
+[ico-styleci]: https://styleci.io/repos/61882068/shield
 
 [link-packagist]: https://packagist.org/packages/infinety-es/notifications
 [link-downloads]: https://packagist.org/packages/infinety-es/notifications
-[link-styleci]: https://styleci.io/repos/60768133
+[link-styleci]: https://styleci.io/repos/61882068
