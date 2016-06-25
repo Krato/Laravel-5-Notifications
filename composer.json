@@ -1,7 +1,7 @@
 {
   "name": "infinety-es/notifications",
   "description": "Notification messages system",
-  "keywords": ["notifications", "messages"],
+  "keywords": ["laravel", "laravel 5", "notifications", "messages"],
   "license": "MIT",
   "authors": [
     {
